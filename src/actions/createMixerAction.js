@@ -1,6 +1,6 @@
 import { SHOW_MIXERS } from "./mixerActionType"
 
 
-export function showMixers(mixers) {
+export const showMixers = (mixers) => {
     return { type: SHOW_MIXERS, mixers: mixers }
 }
