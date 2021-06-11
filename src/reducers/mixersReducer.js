@@ -1,6 +1,6 @@
+import { SHOW_MIXERS } from '../actions/mixerActionType'
 
-
-export default mixersReducer = (state = {mixers: [], loading: false}, action) => {
+const mixersReducer = (state = {mixers: [], loading: false}, action) => {
     switch(action.type) {
         case SHOW_MIXERS:
             return action.mixers;
@@ -10,3 +10,5 @@ export default mixersReducer = (state = {mixers: [], loading: false}, action) =>
                 return state;
     }
 }
+
+export default mixersReducer

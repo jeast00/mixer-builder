@@ -1,9 +1,12 @@
-import { applyMiddleware, createStore } from "redux"
+import { createStore, applyMiddleware } from "redux"
+import thunk from 'redux-thunk'
 import indexReducer from "../reducers/indexReducer"
 
 
-export default indexStore = () => {
+const indexStore = () => {
     return createStore(
         indexReducer, applyMiddleware(thunk)
     )
 }
+
+export default indexStore

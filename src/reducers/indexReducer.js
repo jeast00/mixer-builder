@@ -1,11 +1,9 @@
 import { combineReducers } from "redux";
-import mixerIngredientsReducer from "./mixerIngredientsReducer";
 import mixersReducer from "./mixersReducer";
 
 
 const indexReducer = combineReducers({
-    mixers: mixersReducer,
-    mixer_ingredients: mixerIngredientsReducer
+    mixers: mixersReducer
 })
 
 export default indexReducer
