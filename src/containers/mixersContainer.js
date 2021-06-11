@@ -5,6 +5,18 @@ import { connect } from "react-redux";
 
 class MixersContainer extends Component {
 
+    componentDidMount() {
+        this.props.fetchMixers();
+    }
+
+    render() {
+        return (
+            <div>
+                
+            </div>
+        )
+    }
+
 
 
 }

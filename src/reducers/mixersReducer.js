@@ -4,7 +4,7 @@ const mixersReducer = (state = { mixers: [] }, action) => {
     switch(action.type) {
         case SHOW_MIXERS:
             return {
-                ...state
+                ...state, mixers: action.payload
             };
 
 
