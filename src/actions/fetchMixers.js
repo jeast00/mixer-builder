@@ -1,11 +1,10 @@
-import { SHOW_MIXERS } from "./mixerActionType"
+
 
 
 export const fetchMixers = () => {
-    return dispatch => {
-        dispatch({type: SHOW_MIXERS})
-        fetch('/mixers')
+    return (dispatch) => {
+        fetch("/mixers")
         .then(resp => resp.json())
-        .then(mixers => dispatch({type: SHOW_MIXERS, payload: mixers}))
+        .then(mixers => dispatch( { type: "MIXER_OUTPUT", payload: mixers } ) )
     }
 }
