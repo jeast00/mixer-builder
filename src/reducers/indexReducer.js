@@ -3,7 +3,7 @@ import mixersReducer from "./mixersReducer";
 
 
 const indexReducer = combineReducers({
-    mixersReducer
+     mixersReducer
 })
 
 export default indexReducer

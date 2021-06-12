@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from 'axios';
-import { showMixers } from "../actions/createMixerAction";
+import { fetchMixers } from "../actions/fetchMixers"
+
 
 
 
@@ -9,25 +9,18 @@ import { showMixers } from "../actions/createMixerAction";
 
 class MixersContainer extends Component {
 
-    fetchMixers() {
-        axios.get("/mixers")
-        .then(console.log)
-    }
-
-    
-
-    componentDidMount() {
-        this.fetchMixers()
+     componentDidMount() {
+        this.props.fetchMixers();
     }
 
     render() {
+        console.log(this.props);
+        const mixers = this.props.mixers.map((mixer, index) => {
+            return <li key={index}>{mixer.drink_name}</li>
+        })
         return (
             <div>
-             {/* {this.props.mixers.map((mixer) => {
-                 return (
-                     <li key={mixer.id}>{mixer.drink_name}</li>
-                 )
-             })} */}
+                <ul>{this.props.loading ? <h2>waiting to load...</h2> : mixers }</ul>
             </div>
         )
     }
@@ -38,9 +31,10 @@ class MixersContainer extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        mixers: state.mixers
+        mixers: state.mixersReducer.mixers,
+        loading: state.mixersReducer.loading
     }
 }
 
 
-export default connect(mapStateToProps)(MixersContainer)
+export default connect(mapStateToProps, { fetchMixers })(MixersContainer)
