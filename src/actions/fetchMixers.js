@@ -1,9 +1,16 @@
+import axios from "axios"
+
 
 
 export const fetchMixers = () => {
-    return dispatch => {
-        fetch("/mixers")
-        .then(resp => resp.json())
-        .then(mixers => dispatch({ type: "SHOW_MIXERS", payload: mixers }))
-    }
+   axios.get("/mixers")
+   .then(resp => {
+       resp.data.data.map((mixer, mixer_index) => {
+           return {
+               id: `${mixer_index}`,
+               drink_name: mixer.drink_name
+           }
+       })
+       console.log(resp.data.data)
+   })
 }
