@@ -1,17 +1,26 @@
-
+import React, { useState } from 'react';
+import MixerBuilderCardList from './MixerBuilderCardList'
 
 
 function App() {
-  
+  const [mixerCards, setMixerCards] = useState(samp)
+
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Mixer Builder</h1>
-      </header>
-    </div>
-  );
+    <MixerBuilderCardList mixerCards={mixerCards}/>
+  )
 }
+
+const samp = [
+  {
+    id: 1,
+    drink_name: "Bloody Mary",
+    mixer_ingredients: {
+      ingredient_1: "mix",
+      ingredient_2: "vodka"
+    }
+  }
+]
 
 export default App;
