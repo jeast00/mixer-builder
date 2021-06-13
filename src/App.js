@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MixerBuilderCardList from './MixerBuilderCardList'
+import './App.css'
 
 
 function App() {
