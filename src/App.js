@@ -16,10 +16,10 @@ const samp = [
   {
     id: 1,
     drink_name: "Bloody Mary",
-    mixer_ingredients: {
-      ingredient_1: "mix",
-      ingredient_2: "vodka"
-    }
+    mixer_ingredients: [ 
+      "mix", 
+      "vodka"
+    ]
   }
 ]
 
